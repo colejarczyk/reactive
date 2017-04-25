@@ -1,0 +1,17 @@
+.main-nav .nav {
+  float: right;
+}
+
+.main-nav .nav {
+  padding: 15px;
+}
+
+.active {
+  background-color: #eee;
+}
+
+.logo {
+  padding: 25px 30px;
+  font-weight:300;
+  font-size:25px;
+}
