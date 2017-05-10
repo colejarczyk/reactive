@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import configureStore from './stores';
 import AppContainer from './containers/AppContainer';
 import './index.css';
 import routes from './routes';
+
+injectTapEventPlugin();
 
 const initialState = {
   categories: [
@@ -25,6 +29,8 @@ const initialState = {
 const store = configureStore(initialState);
 
 ReactDOM.render(
-    <AppContainer store={store} routes={routes}/>,
+    <MuiThemeProvider>
+      <AppContainer store={store} routes={routes}/>
+    </MuiThemeProvider>,
     document.getElementById('root'),
 );

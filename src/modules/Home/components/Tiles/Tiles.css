@@ -1,0 +1,18 @@
+.grid-list {
+    /* Prevent vertical gaps */
+    line-height: 0 !important;
+    column-count: 4 !important;
+    column-gap: 0 !important;
+    width: 100%;
+}
+
+.grid-tile-wrapper {
+    overflow: hidden;
+}
+
+.grid-tile img {
+    /* Just in case there are inline attributes */
+    width: 100% !important;
+    height: auto !important;
+    display: inline-block;
+}

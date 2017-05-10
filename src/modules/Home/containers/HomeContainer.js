@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import MainNavigation from '../../../components/MainNavigation';
-import TopHeader from '../../../components/TopHeader';
-import Slider from '../components/Slider';
+import './HomeContainer.css';
+import TopBar from '../../../components/TopBar/TopBar';
+import MenuDrawer from '../../../components/MenuDrawer/MenuDrawer';
+import Tiles from '../components/Tiles/Tiles';
 
 class HomeContainer extends Component {
 
@@ -12,25 +13,26 @@ class HomeContainer extends Component {
     products: PropTypes.array.isRequired,
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {open: false};
+  }
+
+  handleOnLeftIconButtonTouchTap = () => {
+    this.setState({open: !this.state.open});
+  };
+
+  handleHideMenuDrawer = () => {
+    this.setState({open: false});
+  };
+
   render() {
     return (
         <div>
-          <TopHeader/>
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
-                <MainNavigation categories={this.props.categories}/>
-              </div>
-            </div>
-          </div>
-          <Slider products={this.props.products}/>
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
-                Products
-              </div>
-            </div>
-          </div>
+          <TopBar
+              handleOnLeftIconButtonTouchTap={this.handleOnLeftIconButtonTouchTap}/>
+          <MenuDrawer open={this.state.open} hide={this.handleHideMenuDrawer}/>
+          <Tiles />
         </div>
     );
   }

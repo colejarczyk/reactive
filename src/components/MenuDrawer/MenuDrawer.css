@@ -1,0 +1,10 @@
+.menu-drawer .menu-drawer-item {
+    padding: 10px 15px !important;
+}
+
+.menu-drawer-header {
+    font-weight:300;
+    padding: 10px 0;
+    text-align: center;
+    margin:10px 0 0 -15px;
+}

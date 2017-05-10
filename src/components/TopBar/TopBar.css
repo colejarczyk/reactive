@@ -1,0 +1,14 @@
+.top-bar {
+    background-color: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+}
+.top-bar * {
+    color: #000 !important;
+}
+.top-bar svg {
+    fill: #000 !important;
+}
+.top-bar-right i {
+    margin-right: 20px;
+}
